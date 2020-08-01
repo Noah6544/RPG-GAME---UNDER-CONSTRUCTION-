@@ -26,26 +26,40 @@ def create_random_files(filedirectory, filenum, file_type):
 
 
 def cleanup_directory(file_directory, file_name_input):
-    count2 = 1
+    count2 = 0
     renamed = []
-    #while True:
-    for cleaned_file in os.listdir(file_directory):
-        src = file_directory + cleaned_file
-        dst = file_directory + file_name_input + "_" + str(count2) + cleaned_file
+    old_rename = []
+    old_files = (os.listdir(file_directory))
+    old_files = tuple(old_files)
+    num_of_old_files = len(os.listdir(file_directory))
+    timecount = 0
+    while True:
+        for file in os.listdir(file_directory):
+            #cleaned_file = open(cleaned_file)
+            src = file_directory + file
+            dst = file_directory + file_name_input + "_" + str(count2) + file
+            #split_file_name = os.listdir(file_directory)
+            #split_file_name = str(split_file_name)
+            #split_file_name = split_file_name.split(".")
+            #print(type(split_file_name))
+            count2 += 1
+            print(num_of_old_files)
+            if num_of_old_files >= count2:
 
-        split_file_name = os.listdir(file_directory)
-        split_file_name = str(split_file_name)
-        split_file_name = split_file_name.split(".")
-        #print(type(split_file_name))
-        if cleaned_file in renamed:
-            pass
-            cleaned_file.close()
-        elif cleaned_file not in renamed:
-            cleaned_file = open(cleaned_file)
-            os.rename(src, dst)
-            renamed.append(cleaned_file)
-            cleaned_file.write(str(count2**count2)*count2)
-            cleaned_file.close()
+                print("passed first if statement")
+                os.rename(src, dst)
+                if file in old_rename:
+                    print("passed second if statement")
+                    pass
+                elif file not in old_files:
+                    os.rename(src, dst)
+            else:
+                timecount += 1
+                if timecount >= 3:
+                    time.sleep(5)
+                    print("sleeping")
+               #cleaned_file.write(str(count2**count2)*count2)
+                #cleaned_file.close()
         # return endswith
         # file = open(str(value) + ".txt","w")
         # print(cl)
