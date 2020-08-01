@@ -9,7 +9,7 @@ class Player: #todo finish this class and figure out it's funciton
     def __init__(self,attack,defense, speed, health):
         self.name = name
 
-    def attack(self, attack, speed):
+ #   def attack(self, attack, speed):
         #todo create an attack function that every class can use
 
 class Warrior(Player):
