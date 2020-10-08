@@ -1,4 +1,4 @@
-##BACKGROUND
+## BACKGROUND
 I started coding this in homeroom and any spare time in 8th grade. I made the most progress during a Christmas roadtrip to baltimore. I haven't touched this in about
 6 months, and today is 7-30-2020. I'm trying to create a game in which I can learn how to make GUI's, learn more python, and have something to show off t omy friends 
 next year.
